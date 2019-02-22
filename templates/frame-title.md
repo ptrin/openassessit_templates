@@ -1,3 +1,6 @@
+
+<a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#bypass-blocks">WCAG 2.4.1</a> <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#name-role-value">WCAG 4.1.2</a>
+
 {%- if audit.description %}
 
 {{ audit.description|trim }}
@@ -24,7 +27,9 @@ Add a descriptive `title` attribute.
 
 {% include 'includes/other-options-w-details.md' %}
 
+{% if not loop.last %}
 ---
+{% endif %}
 <br>
 
 {% endfor %}

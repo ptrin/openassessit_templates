@@ -1,3 +1,6 @@
+
+<a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#info-and-relationships">WCAG 1.3.1</a>
+
 {%- if audit.description %}
 
 {{ audit.description|trim }}
@@ -23,7 +26,9 @@ Move the offending child elements inside the `<dt>` or `<dd>` elements.
 
 {% include 'includes/other-options.md' %}
 
+{% if not loop.last %}
 ---
+{% endif %}
 <br>
 
 {% endfor %}

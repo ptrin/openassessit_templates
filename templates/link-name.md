@@ -1,3 +1,6 @@
+
+<a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#name-role-value">WCAG 4.1.2</a>
+
 {%- if audit.description %}
 
 {{ audit.description|trim }}
@@ -86,7 +89,7 @@ __Visual location:__
 
 #### Suggested solution:
 
-If it is vauge like, "Read more" or "Learn more", it won't make sense out of context and it must be changed. Or add invisible screen reader text.
+If it is vague like, "Read more" or "Learn more", it won't make sense out of context and it must be changed. Or add invisible screen reader text.
 
 
 
@@ -94,7 +97,7 @@ If it is vauge like, "Read more" or "Learn more", it won't make sense out of con
 
 ### I need a human! I'm not sure, but this link might not have a descriptive name to a screen reader.
 
-If the link text and/or the image's alt text clearly indicate the links purpose and where it will take the them, the link is fine.
+If the link text and/or the image's alt text clearly indicate the links purpose and where it will take the user, the link is fine.
 
 __Visual location:__
 
@@ -114,7 +117,9 @@ Ask does this link name make sense if no context is provided? If yes, this can b
 
 {% include 'includes/other-options-w-details.md' %}
 
+{% if loop.nextitem %}
 ---
+{% endif %}
 <br>
 
 {% endfor %}

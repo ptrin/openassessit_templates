@@ -1,3 +1,6 @@
+
+<a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#info-and-relationships">WCAG 1.3.1</a>
+
 {%- if audit.description %}
 
 {{ audit.description|trim }}
@@ -30,7 +33,9 @@ If this element's `role` is unnecessary, remove it.
 
 {% include 'includes/other-options.md' %}
 
+{% if not loop.last %}
 ---
+{% endif %}
 <br>
 
 {% endfor %}

@@ -1,3 +1,6 @@
+
+<a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#contrast-minimum">WCAG 1.4.3</a>
+
 {%- if audit.description %}
 
 {{ audit.description|trim }}
@@ -26,7 +29,9 @@ __HTML location:__
 
 {% include 'includes/other-options.md' %}
 
+{% if not loop.last %}
 ---
+{% endif %}
 <br>
 
 {% endfor %}

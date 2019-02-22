@@ -1,3 +1,6 @@
+
+<a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#info-and-relationships">WCAG 1.3.1</a> <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#parsing">WCAG 4.1.1</a> <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#name-role-value">WCAG 4.1.2</a>
+
 {%- if audit.description %}
 
 {{ audit.description|trim }}
@@ -28,7 +31,9 @@ This `role` does not exist. It will confuse assistive technology and the people 
 
 {% include 'includes/other-options.md' %}
 
+{% if not loop.last %}
 ---
+{% endif %}
 <br>
 
 {% endfor %}

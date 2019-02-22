@@ -1,3 +1,6 @@
+
+<a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#language-of-page">WCAG 3.1.1</a>
+
 {%- if audit.description %}
 
 {{ audit.description|trim|escape }}
@@ -30,7 +33,9 @@ Selector:<br>
 <code>{{ item.node.selector }}</code>
 </details>
 
+{% if not loop.last %}
 ---
+{% endif %}
 <br>
 
 {% endfor %}

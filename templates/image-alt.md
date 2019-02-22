@@ -1,3 +1,6 @@
+
+<a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#non-text-content">WCAG 1.1.1</a>
+
 {%- if audit.description %}
 
 {{ audit.description|trim }}
@@ -25,7 +28,9 @@ Add an `alt` attribute with an accurate description to the image or add invisibl
 
 {% include 'includes/other-options-w-details.md' %}
 
+{% if not loop.last %}
 ---
+{% endif %}
 <br>
 
 {% endfor %}

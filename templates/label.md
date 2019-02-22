@@ -1,3 +1,6 @@
+
+<a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#labels-or-instructions">WCAG 3.3.2</a>
+
 {%- if audit.description %}
 
 {{ audit.description|trim }}
@@ -26,7 +29,9 @@ If that already exists, add a `placeholder` attribute. Hidden labels require a `
 
 {% include 'includes/other-options-w-details.md' %}
 
+{% if not loop.last %}
 ---
+{% endif %}
 <br>
 
 {% endfor %}

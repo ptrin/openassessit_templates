@@ -4,6 +4,16 @@
         <meta charset="utf-8" />
         <title>Assessment</title>
         <style>
+            h2 {
+                display: inline-block;
+            }
+            h2 + p {
+                display: inline-block;
+            }
+            h2 + p > a {
+                padding-left: 0.5em;
+                font-size: 0.8em;
+            }
             img {max-width:500px; height: auto; max-height: 500px; border: 1px solid #666; }
             a {color: blue;}
             main { font-family: sans-serif;margin: 0 auto;width: 60em; }
@@ -83,6 +93,39 @@
             .codehilite .vm { color: #19177C } /* Name.Variable.Magic */
             .codehilite .il { color: #666666 } /* Literal.Number.Integer.Long */
         </style>
+        <script charset="utf-8">
+            function getWCAGLinksForSummary() {
+                var wcagLinks = document.querySelectorAll('h2 + p > a');
+                wcagLinks = Array.prototype.slice.call(wcagLinks, 0);
+                var sortedWcagLinks = wcagLinks = wcagLinks.sort( function(a, b) { return a.innerText > b.innerText } );
+                var wcagLinksSet = Array.from(new Set(sortedWcagLinks));
+                var filteredWcagLinks = sortedWcagLinks.reduce(function(acc, cur) {
+                    function containsMatchingInnerText(array, innerText) {
+                        return array.filter(function(item) {
+                            return item.innerText === innerText;
+                        });
+                    }
+                    if (!containsMatchingInnerText(acc, cur.innerText).length) {
+                        acc.push(cur);
+                    }
+                    return acc;
+                }, []);
+                return filteredWcagLinks;
+            }
+            function buildWCAGSummary(filteredWcagLinks) {
+                filteredWcagLinks.forEach( function(node) {
+                    var linkClone = node.cloneNode(true);
+                    var li = document.createElement('li');
+                    li.appendChild(linkClone);
+                    document.getElementById('wcag-summary').appendChild(li);
+                });
+            }
+            function init() {
+                var summaryLinks = getWCAGLinksForSummary();
+                buildWCAGSummary(summaryLinks);
+            }
+            document.addEventListener("DOMContentLoaded", init);
+        </script>
     </head>
     <body>
         <main>

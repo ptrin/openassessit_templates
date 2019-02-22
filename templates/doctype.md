@@ -8,7 +8,7 @@ Description:<br>
 
 {% endif -%}
 
-{{ explaination }}
+{{ explanation }}
 
 An invalid or missing `doctype` also makes it difficult or impossible to verify if the rest of the code is valid. Less validation errors results in more robust code that will work more predictably on a wide variety of devices, browser, and assistive technologies.
 

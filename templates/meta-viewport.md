@@ -1,3 +1,6 @@
+
+<a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#resize-text">WCAG 1.4.4</a>
+
 {%- if audit.description %}
 
 {{ audit.description|trim }}
@@ -24,7 +27,9 @@ If applicable:
 
 {% include 'includes/other-options-w-details.md' %}
 
+{% if not loop.last %}
 ---
+{% endif %}
 <br>
 
 {% endfor %}
